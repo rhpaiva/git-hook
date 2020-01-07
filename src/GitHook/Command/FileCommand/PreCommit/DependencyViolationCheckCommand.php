@@ -59,7 +59,7 @@ class DependencyViolationCheckCommand implements CommandInterface
 
         $organization = $this->getOrganizationNameFromFile($context->getFile());
 
-        $processDefinition = ['vendor/bin/console', 'dev:dependency:find', sprintf('%s.%s', $organization, $module), '-vv'];
+        $processDefinition = ['vendor/bin/zed', 'dev:dependency:find', sprintf('%s.%s', $organization, $module), '-vv'];
         $process = $this->buildProcess($processDefinition, PROJECT_ROOT);
         $process->run();
 
